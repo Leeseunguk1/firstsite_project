@@ -1,3 +1,14 @@
-<h1>
-    Hello, World!
-</h1>
+#hello/templates/home.html
+
+<h1> 블로그 글 목록 </h1>
+<br>
+<a href="{% url 'new' %}">새 글쓰기</a>
+
+{% for blogs in blogs.all%}
+    <h1> {{blogs.title}}</h1>
+    <p>{{blogs.created_at}}</p>
+    <p>{{blogs.body}}</p>
+    <br><br>
+{%endfor%}
+
+
